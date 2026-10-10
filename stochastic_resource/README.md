@@ -2,7 +2,7 @@
 
 Python code for the results on resource persistence, fluctuation size, and noisy
 oscillations in "Eco-evolutionary games in noisy environments" (Bodin, Wang & Plotkin).
-The figures and analyses of behavior under environmental noise (Figs. 2-4, 7 and S1)
+The figures and analyses of behavior under environmental noise (Figs. 2-4, 6 and S1)
 are produced by the notebook in the repository root.
 
 All quantities are computed from the discrete birth-death chain for the resource,
@@ -12,7 +12,7 @@ not from its diffusion approximation. Times are in units of 1/(s*epsilon).
 |---|---|
 | `model.py` | model definitions: rates, strategy rest points, attractors, quasi-stationary distributions, mean collapse times, collapse barriers |
 | `fig5_collapse.py` | Fig. 5 (`figures/fig5_collapse.png`) and the barriers and collapse times quoted with it |
-| `fig6_noise.py` | Fig. 6 (`figures/fig6_noise.png`), K_noise, and the fractions of time at full cooperation |
+| `figS2_noise.py` | SI Fig. S2 (`figures/figS2_noise.png`), K_noise, and the fractions of time at full cooperation (SI Sec. 1.8) |
 | `table_barriers.py` | SI Table 2 |
 | `table_fast_environment.py` | SI Table 3 and the mean effective environment at K = 100 (SI Sec. 1.10) |
 | `collapse_checks.py` | numerical checks in SI Secs. 1.6, 1.7 and 1.9 (quasi-stationary distribution, growth of the collapse time with K, diffusion barrier, stochastic simulation, harvest split, immigration) |

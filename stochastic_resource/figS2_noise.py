@@ -1,4 +1,4 @@
-"""Fig. 6: (a) fraction of time at full cooperation against K for harmony (poor) /
+"""SI Fig. S2: (a) fraction of time at full cooperation against K for harmony (poor) /
 snowdrift (rich), with the Gaussian rule and K_noise; (b) K Var(m) at K = 8000
 against the feedback strength phi, over a grid of incentive parameters."""
 import itertools
@@ -80,4 +80,4 @@ for a_, l in zip(axs, "ab"):
 err = np.abs(pts[:, 1] / pts[:, 2] - 1)
 print(f"(b) {n_grid} grid points, {len(pts)} with an interior attractor; "
       f"max relative discrepancy {err.max():.4f}; phi in [{pts[:,0].min():.2f}, {pts[:,0].max():.2f}]")
-fig.savefig("figures/fig6_noise.png", dpi=220)
+fig.savefig("figures/figS2_noise.png", dpi=220)
