@@ -5,9 +5,10 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, Rectangle, FancyArrowPatch
+import matplotlib.patheffects as pe
 
 plt.rcParams.update({"mathtext.fontset": "cm", "font.family": "Arial"})
-BLUE, RED, GREEN, GREY, ORANGE = "#2a6fb0", "#d0352f", "#2f9a3e", "#9c9c9c", "#e8801c"
+BLUE, RED, GREEN, GREY, ORANGE = "#2a6fb0", "#d0352f", "#1f8f34", "#7d7d7d", "#e8801c"
 BLUE_BG, GREEN_BG, INK, ARROW = "#eef4fb", "#eff8f0", "#222222", "#5a5a5a"
 W, H = 2000, 1300
 
@@ -81,12 +82,14 @@ text(830, 1197, r"$+\;\mathrm{stochasticity}$", 26, color=ORANGE)
 # payoffs depend on the resource; weights coloured as the resource bar
 text(160, 535, "Payoff matrix", 23, fontweight="bold")
 x = 160
-for item, col in ((r"$\Pi(m)=$", INK), (r"$(1-m)$", GREY), (0, None), ("$+$", INK), ("$m$", GREEN), (1, None)):
+for item, col in ((r"$\Pi(m)=$", INK), (r"$(1-\boldsymbol{m})$", GREY), (0, None), ("$+$", INK),
+                  (r"$\boldsymbol{m}$", GREEN), (1, None)):
     if isinstance(item, int):
         matrix(x, 665, item, 23)
         x += 220 + 28
     else:
-        text(x, 665, item, 24, color=col)
+        bold = [pe.withStroke(linewidth=1.3, foreground=col)] if col != INK else None
+        text(x, 665, item, 24, color=col, path_effects=bold)
         x += width(item, 24) + 26
 print(f"payoff formula ends at x = {x:.0f}")
 
